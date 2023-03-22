@@ -1,0 +1,29 @@
+server:
+  port: 8088
+  servlet:
+    context-path: /
+
+spring:
+  devtools:
+    add-properties: false
+  data:
+    jdbc:
+      repositories:
+        enabled: false
+  application:
+    name: bumble-bee-loan-service
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hbm2ddl:
+        import_files: data.sql
+    open-in-view: false
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3308/store
+    username: store_admin
+    password: admin-123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  sql:
+    init:
+      mode: always

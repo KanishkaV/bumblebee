@@ -1,0 +1,35 @@
+server:
+  port: 8088
+  servlet:
+    context-path: /
+
+spring:
+  data:
+    jdbc:
+      repositories:
+        enabled: false
+  application:
+    name: bumble-bee-loan-service
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        enable_lazy_load_no_trans: true
+      hbm2ddl:
+        import_files: data.sql
+    open-in-view: false
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3308/bumblebee_store
+    username: bumblebee_admin
+    password: bumblebee_admin123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  sql:
+    init:
+      mode: always
+
+springdoc:
+  swagger-ui:
+    enabled: true
+    operationsSor ter: method
+    path: /swagger-ui.html
