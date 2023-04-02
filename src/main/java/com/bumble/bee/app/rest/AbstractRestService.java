@@ -14,7 +14,7 @@ import java.util.*;
 @Slf4j
 public abstract class AbstractRestService<KEY, DTO extends Dto<KEY>, ENTITY extends Entity<KEY>> implements RestService<KEY, DTO> {
 
-    private final IService<ENTITY, KEY> service;
+    protected final IService<ENTITY, KEY> service;
     private final IConverter<KEY, DTO, ENTITY> mapper;
 
     public AbstractRestService(IService<ENTITY, KEY> service, Class<? extends IConverter<KEY, DTO, ENTITY>> converter) {

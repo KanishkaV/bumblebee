@@ -21,6 +21,15 @@ public class User implements Entity<Long> {
     @Column(name = "last_name")
     private String lastName;
 
+    @Column(name = "user_name",unique = true)
+    private String userName;
+
+    @Column(name = "password")
+    private String password;
+
+    @Column(name = "role")
+    private String role;
+
     @Column(name = "birth_date")
     private Instant birthDate;
 

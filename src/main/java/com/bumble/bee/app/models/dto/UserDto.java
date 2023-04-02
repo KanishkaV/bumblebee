@@ -1,5 +1,6 @@
 package com.bumble.bee.app.models.dto;
 
+import jakarta.persistence.Column;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 
@@ -16,6 +17,8 @@ public class UserDto implements Dto<Long> {
     private String lastName;
 
     private Instant birthDate;
+
+    private String role;
 
     private Double loanAmount;
 

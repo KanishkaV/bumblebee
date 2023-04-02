@@ -18,4 +18,5 @@ public class UserServiceImpl extends AbstractService<User, Long> implements User
     protected Class<User> getEntityClass() {
         return User.class;
     }
+
 }
