@@ -22,9 +22,9 @@ spring:
         import_files: data.sql
     open-in-view: false
   datasource:
-    url: jdbc:mysql://127.0.0.1:3308/bumblebee_store
-    username: bumblebee_admin
-    password: bumblebee_admin123
+    url: jdbc:mysql://bumblebee.mysql.database.azure.com:3306/bumblebee_store?useSSL=true
+    username: bumblebee
+    password: Admin123
     driver-class-name: com.mysql.cj.jdbc.Driver
   sql:
     init:
