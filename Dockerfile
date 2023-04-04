@@ -1,10 +1,10 @@
 FROM gradle:7.2.0-jdk17 AS build
 
 WORKDIR /app
-
+USER root
 COPY . .
-
-RUN gradle clean build --no-build-cache
+ENV GRADLE_OPTS="-Xmx512m"
+RUN gradle clean build --no-build-cache -Xmx512m
 
 FROM openjdk:17-jdk
 
