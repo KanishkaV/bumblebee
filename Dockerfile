@@ -10,7 +10,7 @@ FROM openjdk:17-jdk
 
 WORKDIR /app
 
-COPY --from=builder build/libs/bumble-bee-1.0.0.jar .
+COPY --from=build build/libs/bumble-bee-1.0.0.jar .
 
 EXPOSE 8088
 
