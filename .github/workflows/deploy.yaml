@@ -55,4 +55,4 @@ jobs:
           app-name: 'bumblebee-webapi'
           slot-name: 'production'
           publish-profile: ${{ secrets.AzureAppService_PublishProfile_2492ff0d4d2c4a969385c59ccfe8527c }}
-          package: '*.jar'
+          package: 'bumble-bee-1.0.0.jar'
