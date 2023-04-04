@@ -43,11 +43,15 @@ jobs:
         with:
           name: java-app
 
+      - name: Azure Login
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
           app-name: 'bumblebee-webapi'
           slot-name: 'production'
           publish-profile: ${{ secrets.AzureAppService_PublishProfile_2492ff0d4d2c4a969385c59ccfe8527c }}
