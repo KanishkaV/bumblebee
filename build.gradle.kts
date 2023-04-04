@@ -21,6 +21,7 @@ repositories {
 }
 
 dependencies {
+    testImplementation("junit:junit:4.13.1")
     compileOnly("org.projectlombok:lombok")
     annotationProcessor("org.projectlombok:lombok")
 

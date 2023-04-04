@@ -3,6 +3,7 @@ package com.bumble.bee.app.rest.controller;
 import com.bumble.bee.app.exceptions.EntityNotFoundException;
 import com.bumble.bee.app.models.dao.User;
 import com.bumble.bee.app.models.dto.CredentialsDto;
+import com.bumble.bee.app.models.dto.FullUserDto;
 import com.bumble.bee.app.models.dto.UserDto;
 import com.bumble.bee.app.models.error.BadRequestErrorDto;
 import com.bumble.bee.app.rest.service.UsersRestService;

@@ -7,6 +7,7 @@ import com.bumble.bee.app.rest.AbstractRestService;
 import jakarta.validation.Valid;
 import lombok.AccessLevel;
 import lombok.Getter;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -35,8 +36,14 @@ public abstract class AbstractEntityRestController<KEY, DTO extends Dto<KEY>, EN
     }
 
     @PostMapping(consumes = APPLICATION_JSON_VALUE, produces = APPLICATION_JSON_VALUE)
-    public ResponseEntity<DTO> createEntity(@Valid @RequestBody DTO dto) {
-        return ResponseEntity.ok(this.getRestService().create(dto));
+    public ResponseEntity<?> createEntity(@Valid @RequestBody DTO dto) {
+        DTO dto1 = null;
+        try {
+             dto1 = this.getRestService().create(dto);
+        }catch (DataIntegrityViolationException e){
+            return ResponseEntity.badRequest().body("UserName already in use");
+        }
+        return ResponseEntity.ok(dto1);
     }
 
     @PutMapping(consumes = APPLICATION_JSON_VALUE, produces = APPLICATION_JSON_VALUE)
