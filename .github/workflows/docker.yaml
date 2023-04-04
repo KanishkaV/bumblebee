@@ -23,7 +23,7 @@ jobs:
           context: .
           push: true
           tags: |
-            kanishkav/bumblebee-backend:${{ github.ref }}
+            kanishkav/bumblebee-backend:${{ github.ref/refs/tags/}}
             kanishkav/bumblebee-backend:latest
           build-args: |
             VERSION=$(echo ${{ github.ref }} | sed 's/refs\/tags\/v//')
