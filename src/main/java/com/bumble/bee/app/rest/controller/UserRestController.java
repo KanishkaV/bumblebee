@@ -14,7 +14,7 @@ import java.util.Collection;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = {"http://localhost:4200","https://proud-coast-0c53fa610.3.azurestaticapps.net"})
 @RestController
 @RequestMapping("/users")
 public class UserRestController extends AbstractEntityRestController<Long, FullUserDto, User> {

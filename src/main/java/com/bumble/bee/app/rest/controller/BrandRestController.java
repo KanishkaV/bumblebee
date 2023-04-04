@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = {"http://localhost:4200","https://proud-coast-0c53fa610.3.azurestaticapps.net"})
 @RestController
 @RequestMapping("/brands")
 public class BrandRestController extends AbstractEntityRestController<Long, BrandDto, Brand> {
