@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY . .
 
-RUN gradle clean build
+RUN gradle clean build --no-build-cache
 
 FROM openjdk:17-jdk
 
